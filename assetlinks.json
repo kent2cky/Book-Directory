@@ -1,0 +1,10 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.trovo.wallet",
+      "sha256_cert_fingerprints":
+      ["12:B1:32:29:CE:14:CB:39:C0:FA:C8:B6:47:BE:C3:17:DD:26:E2:01:80:C6:2C:44:69:D3:DB:15:98:23:F0:FA"]
+    }
+}]
+  

@@ -1,6 +1,7 @@
 const mysql = require('mysql');
 const express = require('express');
 const formidable = require('express-formidable');
+var fs = require('fs');
 
 const app = express();
 app.use(formidable());
@@ -124,6 +125,31 @@ app.post('/delete-book', function(req, res) {
           res.redirect('/'); 
         }
     }); 
+});
+
+// edit-book
+app.get('/.well-known/assetlinks.json', function(req, res) {
+  
+  console.log('we got here');
+  var fileName = 'assetlinks.json';  
+
+  fs.readFile(fileName, function(err, data) {
+    res.writeHead(200, {'Content-Type': 'application/json'});
+    res.write(data);
+    return res.end();
+  });
+});
+
+app.get('/deeplink', function(req, res) {
+  
+  console.log('we got here');
+  var fileName = 'deeplink.html';  
+
+  fs.readFile(fileName, function(err, data) {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(data);
+    return res.end();
+  });
 });
 
 // // new-book
