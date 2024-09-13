@@ -19,7 +19,7 @@ jobs:
       - run:
           name: 'Build Project'
           command: |
-          echo Project built!
+          echo "Project built!"
           npm install
           node serverfile.js          
       - save_cache:
@@ -42,7 +42,7 @@ jobs:
           command: |
           npm install
           npm run test
-          echo Project tested!
+          echo "Project tested!""
       - save_cache:
           paths: [node_modules]
           key: build-project
@@ -63,7 +63,7 @@ jobs:
           command: |
           npm install
           npm run test
-          echo project scanned!
+          echo "project scanned!"
           # command: 'echo $MY_NAME here for you.'
       - save_cache:
           paths: [node_modules]
