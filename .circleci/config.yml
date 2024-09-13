@@ -32,7 +32,7 @@ jobs:
           command: "echo Hello!"
 
 
-  print-world:
+  print-name:
       # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
       # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
       docker:
@@ -42,7 +42,7 @@ jobs:
       steps:
         - checkout
         - run:
-            name: "Say hello"
+            name: "Say my name"
             command: "echo $MY_NAME"
 
 
@@ -53,6 +53,6 @@ workflows:
     jobs:
       - say-hello
       - print-hello
-      - print-world:
+      - print-name:
           requires:
             - print-hello
