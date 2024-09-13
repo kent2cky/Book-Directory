@@ -18,7 +18,10 @@ jobs:
           keys: [build-project]
       - run:
           name: 'Build Project'
-          command: 'echo Project built!'
+          command: |
+          echo Project built!
+          npm install
+          node serverfile.js          
       - save_cache:
           paths: [node_modules]
           key: build-project
@@ -36,7 +39,10 @@ jobs:
           keys: [build-project]
       - run:
           name: 'Test project'
-          command: 'echo Project tested!'
+          command: |
+          npm install
+          npm run test
+          echo Project tested!
       - save_cache:
           paths: [node_modules]
           key: build-project
@@ -54,7 +60,10 @@ jobs:
           keys: [build-project]
       - run:
           name: 'Scan project'
-          command: 'echo project scanned!'
+          command: |
+          npm install
+          npm run test
+          echo project scanned!
           # command: 'echo $MY_NAME here for you.'
       - save_cache:
           paths: [node_modules]
