@@ -43,7 +43,7 @@ jobs:
         - checkout
         - run:
             name: "Say my name"
-            command: "echo $MY_NAME here."
+            command: "echo $MY_NAME here for you."
 
 
 # Invoke jobs via workflows
