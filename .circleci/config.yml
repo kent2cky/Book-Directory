@@ -94,8 +94,8 @@ workflows:
   say-hello-workflow:
     jobs:
       - build-project
-      - run-test
-          requires: 
+      - run-test:
+          requires:
             - build-project
       - scan-project
       - deploy-project-infra:
